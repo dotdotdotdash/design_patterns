@@ -1,2 +1,2 @@
-# design_patterns
-A repository for learning different design patterns with examples and UML
+# design_patterns_cpp
+A repository for learning different design patterns in cpp with examples and UML
