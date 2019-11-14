@@ -1,6 +1,6 @@
 /**
  * @file matchday.h
- * @author Venkatavaradhan Vembanoor Lakshmi Narayanan (you@domain.com)
+ * @author Venkatavaradhan Vembanoor Lakshmi Narayanan (venkatavaradhanvl@hotmail.com)
  * @brief A Matchday class
  * @version 0.1
  * @date 2019-11-10
@@ -34,34 +34,41 @@ class Matchday
          * @brief Set the Offense Strategy object
          * @param offense_strategy 
          */
-        void setOffenseStrategy(IOffenseStrategy offense_strategy);
+        // void setOffenseStrategy(IOffenseStrategy* offense_strategy);
         /**
          * @brief Set the Offense Strategy object
-         * @param offense_strategy 
+         * @param defense_strategy 
          */
-        void setdefenseStrategy(IDefenseStrategy defense_strategy);
+        void setdefenseStrategy(IDefenseStrategy* defense_strategy);
         /**
          * @brief Set the Offense Strategy object
-         * @param offense_strategy 
+         * @param substitution_strategy 
          */
-        void setSubstitutionStrategy(ISubstitutionStrategy substitution_strategy);
+        // void setSubstitutionStrategy(ISubstitutionStrategy* substitution_strategy);
+        /**
+         * @brief Get the Matchday Squad object
+         * A method to assemble offense, defense for the team for matchday
+         * @param difficulty
+         * @return std::vector<std::string> 
+         */
+        std::vector<std::string> getMatchdaySquad(int difficulty);
 
     private:
         /**
          * @brief Offense strategy
-         * A shared pointer that keeps the run-time strategy
+         * A pointer that keeps the run-time strategy
          */
-        std::shared_ptr<IOffenseStrategy> offense_strategy_;
+        // IOffenseStrategy* offense_strategy_;
         /**
          * @brief Offense strategy
          * A shared pointer that keeps the run-time strategy
          */
-        std::shared_ptr<IDefenseStrategy> defense_strategy_;
+        IDefenseStrategy* defense_strategy_;
         /**
          * @brief Offense strategy
          * A shared pointer that keeps the run-time strategy
          */
-        std::shared_ptr<ISubstitutionStrategy> substitution_strategy_;
+        // ISubstitutionStrategy* substitution_strategy_;
 };
 
 #endif  // MATCHDAY_H
