@@ -77,6 +77,69 @@ void LinkedList::InsertEnd(const int& value)
     }
 }
 
+void LinkedList::DeleteNodesByValue(const int& value)
+{
+    Node* prev;
+    Node* current;
+
+    while(head_ != NULL && head_->value == value)
+    {
+        Node* temp_head = head_->next;
+        delete head_;
+        head_ = temp_head;
+    }
+
+    current = head_;
+
+    while(current != NULL)
+    {
+        if(current->value != value)
+        {
+            prev = current;
+            current = current->next;
+        }
+        else
+        {
+            prev->next = current->next;
+            delete current;
+            current = current->next;
+        }
+    }
+}
+
+bool LinkedList::DeleteNodeByIndex(const unsigned int& index)
+{
+    int i = 0;
+    Node* current;
+    Node* prev;
+
+    if(index == 0)
+    {
+        Node* temp_head = head_->next;
+        delete head_;
+        head_ = temp_head;
+        return true;
+    }
+
+    current = head_;
+    
+    while(current != NULL && i < index)
+    {
+        prev = current;
+        current = current->next;
+        i++;
+    }
+
+    if(current == NULL)
+    {
+        return false;
+    }
+
+    prev->next = current->next;
+    delete current;
+    return true;
+}
+
 void LinkedList::Display() 
 {
     Node* current = head_;
@@ -103,6 +166,12 @@ int main()
     list.InsertFront(0);
     list.Display();
     list.InsertMiddle(3, 3);
+    list.Display();
+    list.InsertFront(0);
+    list.Display();
+    list.DeleteNodesByValue(0);
+    list.Display();
+    list.DeleteNodeByIndex(3);
     list.Display();
     return 0;
 }

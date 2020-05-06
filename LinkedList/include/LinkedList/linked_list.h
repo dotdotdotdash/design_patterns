@@ -30,10 +30,12 @@ class LinkedList
          */
         void InsertFront(const int& value);
         /**
-         * @brief Insert Middle
+         * @brief Insert middle
          * A member function to insert a node in the middle of a linked list
          * @param value 
-         * @param index 
+         * @param int 
+         * @return true 
+         * @return false 
          */
         bool InsertMiddle(const int& value, const unsigned int& index);
         /**
@@ -43,17 +45,19 @@ class LinkedList
          */
         void InsertEnd(const int& value);
         /**
-         * @brief Delete node by value
-         * A member function to delete a node from linked list by value
+         * @brief Delete nodes by value
+         * A member function to delete a nodes from linked list by value
          * @param value 
          */
-        void DeleteNodeByValue(const int& value);
+        void DeleteNodesByValue(const int& value);
         /**
          * @brief Delete node by index
          * A member function to delete a node from a linked list by index
          * @param int 
+         * @return true 
+         * @return false 
          */
-        void DeleteNodeByIndex(const unsigned int& index);
+        bool DeleteNodeByIndex(const unsigned int& index);
         /**
          * @brief Display
          * A member function to display the linked list
