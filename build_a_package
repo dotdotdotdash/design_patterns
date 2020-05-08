@@ -1,0 +1,12 @@
+#!/bin/bash
+
+if [[ -d ../build ]]
+then
+    echo "build exists. skipping"
+else
+    mkdir ../build
+fi
+
+cd ../build
+cmake ../learning_algorithms/$1/
+make
