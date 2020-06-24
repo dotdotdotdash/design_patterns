@@ -1,2 +1,2 @@
-# learning_algorithms
-A repository for learning different algorithms and datastructures
+# learn_robotics
+A repository for learning different robotics concepts
